@@ -16,5 +16,10 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:gitactions_image
-      run: docker login
+    - name: Log in to Docker Hub
+        uses: docker/login-action
+        with:
+          regisrty: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       
