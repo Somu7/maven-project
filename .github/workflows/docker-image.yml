@@ -22,11 +22,8 @@ jobs:
     - name: Log in to Docker Hub
       uses: actions/checkout@v3
       with:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_USERNAME: somu9491
+        DOCKER_PASSWORD: Somu@9491
     
   
       
