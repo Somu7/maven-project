@@ -18,7 +18,7 @@ jobs:
       env:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: 
-        docker login -u somu9491 -p $"DOCKER_PASSWORD"
+        docker login -u somu9491 --p $DOCKER_PASSWORD
     - name: Build the Docker image
       run: |
         registry: dockerhub.com
