@@ -18,7 +18,7 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag somu9491/testing:latest
         docker push somu9491/testing:latest
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Log in to Docker Hub
       uses: actions/checkout@v3
       with:
