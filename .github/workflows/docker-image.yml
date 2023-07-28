@@ -22,7 +22,6 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESSKEY }}
     - name: Build the Docker image
       run: |
-        registry: dockerhub.com
         docker build . --file Dockerfile --tag somu9491/testing:latest
     - name: push to dockerhub
       run: docker push somu9491/testing:latest
