@@ -16,9 +16,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Log in to Docker Hub
       env:
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESSKEY }}
-      run: 
-        docker login -u somu9491 -p $DOCKER_HUB_ACCESSKEY
+        username: ${{secretes.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_ACCESSKEY }}
     - name: Build the Docker image
       run: |
         registry: dockerhub.com
