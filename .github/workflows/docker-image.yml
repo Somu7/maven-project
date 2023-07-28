@@ -22,9 +22,9 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESSKEY }}
     - name: Extract metadata (tags, labels) for Docker
       id: meta
-      uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+      uses: docker/metadata-action@v1
       with:
-          images: somu9491/github
+          images: somu9491 / mavenimg
     - name: Build and push Docker image
       uses: ddocker/build-push-action@v1
       with:
