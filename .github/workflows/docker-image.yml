@@ -20,17 +20,16 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME}}
         password: ${{ secrets.DOCKER_HUB_ACCESSKEY }}
-    - name: Extract metadata (tags, labels) for Docker
+    - name: Docker meta
       id: meta
-      uses: docker/metadata-action@v1
+      uses: docker/metadata-action@v4
       with:
-          images: somu9491 / mavenimg
-    - name: Build and push Docker image
-      uses: ddocker/build-push-action@v1
+        images: ghcr.io/${{ github.repository }}
+        tags: latest
+
+    - name: Build and push
+      uses: docker/build-push-action@v4
       with:
         context: .
-        file: ./Dockerfile
         push: true
         tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels}}
-      
