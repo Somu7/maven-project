@@ -24,7 +24,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
       with:
-          images: gitimage/somu9491
+          images: somu9491/github
     - name: Build and push Docker image
       uses: ddocker/build-push-action@v1
       with:
