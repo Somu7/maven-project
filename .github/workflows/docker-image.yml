@@ -31,5 +31,6 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: somu9491/gitimage:latest, somu9491/gitimage:$(date +%s)
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
       
