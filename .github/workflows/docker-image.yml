@@ -20,6 +20,10 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME}}
         password: ${{ secrets.DOCKER_HUB_ACCESSKEY }}
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag somu9491/testimg:$(date +%s)
+    - name: Build and push the Docker image
+    - uses: docker/build-push-action@v1
+      with:
+        context:
+        push: true
+        tags: somu9491/gitimage:latest, somu9491/gitimage:$(date +%s)
       
